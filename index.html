@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About the Developer — Cool App Helpdesk</title>
+<meta name="description" content="Cool App Helpdesk builds free, privacy-first Android apps for productivity, tools, and kids education.">
+<style>
+  :root {
+    --bg: #f8fafc; --surface: #ffffff; --text: #0f172a; --muted: #64748b;
+    --primary: #2563eb; --primary-soft: #dbeafe; --border: #e2e8f0;
+    --positive: #15803d; --positive-bg: #dcfce7;
+    --tag-kids: #7c3aed; --tag-kids-bg: #ede9fe;
+    --tag-tool: #0369a1; --tag-tool-bg: #e0f2fe;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f172a; --surface: #1e293b; --text: #e2e8f0; --muted: #94a3b8;
+      --primary: #93c5fd; --primary-soft: #1e3a8a; --border: #334155;
+      --positive: #4ade80; --positive-bg: #14532d;
+      --tag-kids: #a78bfa; --tag-kids-bg: #2e1065;
+      --tag-tool: #38bdf8; --tag-tool-bg: #0c4a6e;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.65; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 40px 24px 96px; }
+
+  header { border-radius: 16px; padding: 36px 32px; margin-bottom: 24px;
+    background: linear-gradient(135deg, #10b981 0%, #059669 45%, #065f46 100%); color: #fff; }
+  header .logo { font-size: 32px; margin-bottom: 8px; }
+  header h1 { margin: 0 0 6px; font-size: 30px; font-weight: 800; letter-spacing: -0.02em; }
+  header .tagline { margin: 0; opacity: 0.92; font-size: 16px; font-weight: 400; }
+  header .updated { margin: 12px 0 0; opacity: 0.75; font-size: 13px; }
+
+  .card { background: var(--surface); border: 1px solid var(--border);
+    border-radius: 14px; padding: 22px 26px; margin: 14px 0; }
+  h2 { font-size: 19px; font-weight: 600; margin: 0 0 14px; letter-spacing: -0.005em; }
+  p, ul, ol { margin: 0 0 12px; }
+  p:last-child, ul:last-child { margin-bottom: 0; }
+  ul, ol { padding-left: 22px; } li { margin-bottom: 6px; }
+  .muted { color: var(--muted); font-size: 14px; }
+  a { color: var(--primary); text-decoration: none; } a:hover { text-decoration: underline; }
+
+  /* Category tag */
+  .tag { display: inline-block; font-size: 11px; font-weight: 600; padding: 2px 8px;
+    border-radius: 20px; vertical-align: middle; margin-left: 6px; }
+  .tag-kids { background: var(--tag-kids-bg); color: var(--tag-kids); }
+  .tag-tool { background: var(--tag-tool-bg); color: var(--tag-tool); }
+  .badge { display: inline-block; background: var(--positive-bg); color: var(--positive);
+    font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 20px; }
+
+  /* App grid */
+  .app-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; margin: 4px 0; }
+  .app-card { border: 1px solid var(--border); border-radius: 12px; padding: 16px 18px;
+    display: flex; flex-direction: column; gap: 6px; }
+  .app-card .app-name { font-weight: 600; font-size: 15px; }
+  .app-card .app-desc { font-size: 14px; color: var(--muted); }
+  .app-card .app-links { font-size: 13px; margin-top: 4px; }
+  .app-card .app-links a { margin-right: 10px; }
+
+  /* Stat strip */
+  .stats { display: flex; gap: 12px; flex-wrap: wrap; margin: 4px 0; }
+  .stat { flex: 1; min-width: 120px; border: 1px solid var(--border); border-radius: 12px;
+    padding: 14px 16px; text-align: center; }
+  .stat .num { font-size: 28px; font-weight: 800; color: var(--primary); }
+  .stat .label { font-size: 13px; color: var(--muted); margin-top: 2px; }
+
+  /* Contact */
+  .contact-row { display: flex; align-items: center; gap: 12px; padding: 12px 0;
+    border-bottom: 1px solid var(--border); font-size: 15px; }
+  .contact-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .contact-row .icon { font-size: 20px; width: 28px; text-align: center; flex-shrink: 0; }
+
+  footer { margin-top: 32px; text-align: center; color: var(--muted); font-size: 13px; }
+  @media (max-width: 480px) {
+    .wrap { padding: 24px 16px 64px; }
+    header { padding: 24px 20px; } header h1 { font-size: 24px; }
+    .card { padding: 18px 20px; } h2 { font-size: 17px; }
+    .app-grid { grid-template-columns: 1fr; }
+    .stats { gap: 8px; }
+  }
+</style>
+</head>
+<body>
+<main class="wrap">
+
+<header>
+  <div class="logo">&#x1F4F1;</div>
+  <h1>Cool App Helpdesk</h1>
+  <p class="tagline">Free, privacy-first Android apps for everyone</p>
+  <p class="updated">Page last updated <time datetime="2026-05-29">May 29, 2026</time></p>
+</header>
+
+<!-- At a glance -->
+<section class="card">
+  <h2>At a glance</h2>
+  <div class="stats">
+    <div class="stat"><div class="num">10</div><div class="label">Apps published</div></div>
+    <div class="stat"><div class="num">2</div><div class="label">App categories</div></div>
+    <div class="stat"><div class="num">0</div><div class="label">User data collected</div></div>
+    <div class="stat"><div class="num">Free</div><div class="label">All apps, always</div></div>
+  </div>
+</section>
+
+<!-- Who we are -->
+<section class="card">
+  <h2>Who we are</h2>
+  <p><strong>Cool App Helpdesk</strong> is an independent Android developer focused on building lightweight, privacy-respecting apps that just work. We publish tools for everyday productivity and educational apps designed for children.</p>
+  <ul>
+    <li>All apps are <strong>free to download and use</strong> &mdash; no hidden subscriptions.</li>
+    <li>We believe in <strong>minimal data collection</strong> &mdash; most apps collect no data whatsoever.</li>
+    <li>Apps are distributed exclusively through <strong>Google Play</strong>.</li>
+    <li>We do not sell, share, or monetise any user information.</li>
+  </ul>
+</section>
+
+<!-- Kids & Education apps -->
+<section class="card">
+  <h2>Kids &amp; Education apps <span class="tag tag-kids">Kids</span></h2>
+  <p>Simple, fun, and ad-free learning experiences for young children. No accounts, no ads, no data collection.</p>
+  <div class="app-grid">
+
+    <div class="app-card">
+      <div class="app-name">100 Numbers</div>
+      <div class="app-desc">Helps young children learn to count from 1 to 100 with audio pronunciation in 5 languages.</div>
+      <div class="app-links">
+        <a href="https://play.google.com/store/apps/details?id=com.coolapphelpdesk.numbers100" target="_blank" rel="noopener">Play Store</a>
+        <a href="https://coolapphelpdesk-bot.github.io/100numbers/" target="_blank" rel="noopener">Privacy policy</a>
+      </div>
+    </div>
+
+    <div class="app-card">
+      <div class="app-name">Emoji Craft Kids</div>
+      <div class="app-desc">Creative emoji-based crafting and sticker play for children. Entirely offline, no ads.</div>
+      <div class="app-links">
+        <a href="https://play.google.com/store/apps/details?id=com.coolapphelpdesk.emojicraftkids" target="_blank" rel="noopener">Play Store</a>
+        <a href="https://coolapphelpdesk-bot.github.io/emoji-craft-kids/" target="_blank" rel="noopener">Privacy policy</a>
+      </div>
+    </div>
+
+    <div class="app-card">
+      <div class="app-name">Math Hero Kids</div>
+      <div class="app-desc">Fun arithmetic practice &mdash; addition, subtraction, multiplication &mdash; for primary-school children.</div>
+      <div class="app-links">
+        <a href="https://play.google.com/store/apps/details?id=com.coolapphelpdesk.mathherokids" target="_blank" rel="noopener">Play Store</a>
+        <a href="https://coolapphelpdesk-bot.github.io/math-hero-kids/" target="_blank" rel="noopener">Privacy policy</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Productivity & Tools apps -->
+<section class="card">
+  <h2>Productivity &amp; Tools <span class="tag tag-tool">Tools</span></h2>
+  <p>Practical utilities that respect your privacy. No sign-in required, minimal permissions, no ads.</p>
+  <div class="app-grid">
+
+    <div class="app-card">
+      <div class="app-name">All API Monitor</div>
+      <div class="app-desc">Monitor REST endpoints and check API status at a glance. Designed for developers and power users.</div>
+      <div class="app-links">
+        <a href="https://play.google.com/store/apps/details?id=com.coolapphelpdesk.allapimonitor" target="_blank" rel="noopener">Play Store</a>
+        <a href="https://coolapphelpdesk-bot.github.io/all-api-monitor/" target="_blank" rel="noopener">Privacy policy</a>
+      </div>
+    </div>
+
+    <div class="app-card">
+      <div class="app-name">App Share</div>
+      <div class="app-desc">Share installed apps as APK files over local networks &mdash; no internet connection needed.</div>
+      <div class="app-links">
+        <a href="https://play.google.com/store/apps/details?id=com.coolapphelpdesk.appshare" target="_blank" rel="noopener">Play Store</a>
+        <a href="https://coolapphelpdesk-bot.github.io/app-share/" target="_blank" rel="noopener">Privacy policy</a>
+      </div>
+    </div>
+
+    <div class="app-card">
+      <div class="app-name">Internet Speed Tester</div>
+      <div class="app-desc">Quick and clean download/upload speed measurement with no account and no background tracking.</div>
+      <div class="app-links">
+        <a href="https://play.google.com/store/apps/details?id=com.coolapphelpdesk.internetspeedtester" target="_blank" rel="noopener">Play Store</a>
+        <a href="https://coolapphelpdesk-bot.github.io/speed-tester/" target="_blank" rel="noopener">Privacy policy</a>
+      </div>
+    </div>
+
+    <div class="app-card">
+      <div class="app-name">Photo Vault</div>
+      <div class="app-desc">A clean, offline photo viewer and organiser. Photos stay on your device &mdash; none are uploaded anywhere.</div>
+      <div class="app-links">
+        <a href="https://play.google.com/store/apps/details?id=com.coolapphelpdesk.photovault" target="_blank" rel="noopener">Play Store</a>
+        <a href="https://coolapphelpdesk-bot.github.io/photovault-privacy/" target="_blank" rel="noopener">Privacy policy</a>
+      </div>
+    </div>
+
+    <div class="app-card">
+      <div class="app-name">Pro Barcode Scanner</div>
+      <div class="app-desc">Fast QR code and barcode scanner. Results stay local; no history is transmitted externally.</div>
+      <div class="app-links">
+        <a href="https://play.google.com/store/apps/details?id=com.coolapphelpdesk.probarcodeescanner" target="_blank" rel="noopener">Play Store</a>
+        <a href="https://coolapphelpdesk-bot.github.io/pro-barecode-scanner/" target="_blank" rel="noopener">Privacy policy</a>
+      </div>
+    </div>
+
+    <div class="app-card">
+      <div class="app-name">Simple PDF Viewer</div>
+      <div class="app-desc">Lightweight PDF reader with no ads, no cloud sync, and no data collection. Open files instantly.</div>
+      <div class="app-links">
+        <a href="https://play.google.com/store/apps/details?id=com.coolapphelpdesk.simplepdfviewer" target="_blank" rel="noopener">Play Store</a>
+        <a href="https://coolapphelpdesk-bot.github.io/simple-pdf-viewer/" target="_blank" rel="noopener">Privacy policy</a>
+      </div>
+    </div>
+
+    <div class="app-card">
+      <div class="app-name">Stock Management</div>
+      <div class="app-desc">Local inventory and stock tracking tool for small businesses. Data stays entirely on device.</div>
+      <div class="app-links">
+        <a href="https://play.google.com/store/apps/details?id=com.coolapphelpdesk.stockmanagement" target="_blank" rel="noopener">Play Store</a>
+        <a href="https://coolapphelpdesk-bot.github.io/stock-management/" target="_blank" rel="noopener">Privacy policy</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Privacy commitment -->
+<section class="card">
+  <h2>Our privacy commitment</h2>
+  <p>Every app we publish follows the same principles:</p>
+  <ul>
+    <li><strong>No accounts required.</strong> You never need to register or log in.</li>
+    <li><strong>No advertising SDKs.</strong> None of our apps display ads or use ad-tracking libraries.</li>
+    <li><strong>No analytics.</strong> We do not embed crash reporters, event trackers, or usage analytics.</li>
+    <li><strong>Minimal permissions.</strong> Each app requests only what it needs to function &mdash; nothing extra.</li>
+    <li><strong>Transparent policies.</strong> Every app has its own plain-language privacy policy linked from the Play Store listing.</li>
+  </ul>
+</section>
+
+<!-- Contact -->
+<section class="card">
+  <h2>Contact</h2>
+  <p>We welcome bug reports, feature suggestions, and general feedback.</p>
+  <div class="contact-row">
+    <span class="icon">&#x2709;&#xFE0F;</span>
+    <span>Email: <a href="mailto:coolapphelpdesk@gmail.com">coolapphelpdesk@gmail.com</a></span>
+  </div>
+  <div class="contact-row">
+    <span class="icon">&#x1F4AC;</span>
+    <span>Preferred contact for support &mdash; we typically respond within 2&ndash;3 business days.</span>
+  </div>
+  <div class="contact-row">
+    <span class="icon">&#x1F6E1;&#xFE0F;</span>
+    <span>For privacy-related questions, include the app name in the subject line so we can respond accurately.</span>
+  </div>
+</section>
+
+<footer>&copy; 2026 Cool App Helpdesk &middot; All rights reserved</footer>
+
+</main>
+</body>
+</html>
